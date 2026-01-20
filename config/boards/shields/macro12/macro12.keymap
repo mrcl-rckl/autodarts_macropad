@@ -1,15 +1,24 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h> // Erforderlich für den Mausklick
 
 / {
     keymap {
         compatible = "zmk,keymap";
+
         default_layer {
             bindings = <
-                &kp LG(T)      &kp LC(LA(LEFT)) &kp LC(LA(RIGHT)) 
-                &kp LG(E)      &kp LC(C)        &kp LC(V)        
-                &kp LA(F4)     &kp C_VOL_UP     &kp C_VOL_DN     
-                &kp C_PP       &kp C_NEXT       &kp C_PREV       
+                // Reihe 1
+                &kp S          &kp R          &kp F5
+                
+                // Reihe 2
+                &kp BSPC       &kp G          &kp RET
+                
+                // Reihe 3 (Mausklick Mitte ist hardwareseitig ein normaler Klick)
+                &none          &mkp LCLK      &kp F11
+                
+                // Reihe 4
+                &kp N1         &kp N2         &kp N3
             >;
         };
     };
