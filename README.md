@@ -76,7 +76,7 @@
     <tr>
       <td>1x</td>
       <td><b>500mAh LiPo Battery (503030)</b></td>
-      <td><a href="https://de.aliexpress.com/item/1005009836119485.html">AliExpress</a></td>
+      <td><a href="https://de.aliexpress.com/item/1005007964712378.html">AliExpress</a></td>
     </tr>
     <tr>
       <td>12x</td>
@@ -91,7 +91,7 @@
     <tr>
       <td>1x</td>
       <td><b>Toggle Switch (MTS-101)</b></td>
-      <td><a href="https://de.aliexpress.com/item/1005005942183255.html">AliExpress</a></td>
+      <td><a href="https://de.aliexpress.com/item/4000032608294.html?">AliExpress</a></td>
     </tr>
     <tr>
       <td>1x</td>
@@ -237,7 +237,7 @@
     <tr>
       <td>1x</td>
       <td><b>500mAh LiPo Akku (Bauform 503030)</b></td>
-      <td><a href="https://de.aliexpress.com/item/1005009836119485.html">AliExpress</a></td>
+      <td><a href="https://de.aliexpress.com/item/1005007964712378.html">AliExpress</a></td>
     </tr>
     <tr>
       <td>12x</td>
@@ -252,7 +252,7 @@
     <tr>
       <td>1x</td>
       <td><b>Kippschalter (MTS-101)</b></td>
-      <td><a href="https://de.aliexpress.com/item/1005005942183255.html">AliExpress</a></td>
+      <td><a href="https://de.aliexpress.com/item/4000032608294.html?">AliExpress</a></td>
     </tr>
     <tr>
       <td>1x</td>
