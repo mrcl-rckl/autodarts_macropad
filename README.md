@@ -155,9 +155,11 @@
   </a>
 </p>
 
+<hr />
 <br><br>
 <div style="height: 15px; background: linear-gradient(90deg, #444 0%, #888 50%, #444 100%); border-radius: 8px; margin: 50px 0;"></div>
 <br><br>
+<hr />
 
 <div align="center">
   <h1>🎯 Zusatztastatur für Autodarts</h1>
