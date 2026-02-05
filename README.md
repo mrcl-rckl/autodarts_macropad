@@ -6,7 +6,7 @@
   <p><i>A custom 12-key controller designed for seamless darts tracking.</i></p>
 
   <p>
-    The Autodarts Macropad is a wireless DIY controller featuring 12 mechanical keys, specifically designed for comfortable operation of the Autodarts software directly from the oche. It provides instant access to functions such as undoing throws, switching cameras, or calling the AI referee, while offering an impressive battery life of about six weeks via Bluetooth. Thanks to its open-source firmware, the entire device is fully customizable to suit your personal needs.
+    The Macropad for Autodarts is a wireless DIY controller featuring 12 mechanical keys, specifically designed for comfortable operation of the Autodarts software directly from the oche. It provides instant access to functions such as undoing throws, switching cameras, or calling the AI referee, while offering an impressive battery life of about six weeks via Bluetooth. Thanks to its open-source firmware, the entire device is fully customizable to suit your personal needs.
   </p>
 
   <p>
@@ -167,7 +167,7 @@
   <p><i>Ein maßgeschneidertes 12-Tasten-Steuergerät für die professionelle Wurferfassung am Oche.</i></p>
 
   <p>
-    Das Autodarts Macropad ist ein kabelloses DIY-Steuergerät mit 12 mechanischen Tasten, das speziell für die komfortable Bedienung der Autodarts-Software direkt am Oche entwickelt wurde. Es ermöglicht den blitzschnellen Zugriff auf Funktionen wie Wurfrücknahme, Kamerawechsel oder den KI-Schiedsrichter und bietet dank Bluetooth-Anbindung eine beachtliche Akkulaufzeit von etwa sechs Wochen. Durch die Nutzung von Open-Source-Firmware lässt sich das gesamte Gerät zudem vollständig nach deinen persönlichen Wünschen anpassen.
+    Das Macropad für Autodarts ist ein kabelloses DIY-Steuergerät mit 12 mechanischen Tasten, das speziell für die komfortable Bedienung der Autodarts-Software direkt am Oche entwickelt wurde. Es ermöglicht den blitzschnellen Zugriff auf Funktionen wie Wurfrücknahme, Kamerawechsel oder den KI-Schiedsrichter und bietet dank Bluetooth-Anbindung eine beachtliche Akkulaufzeit von etwa sechs Wochen. Durch die Nutzung von Open-Source-Firmware lässt sich das gesamte Gerät zudem vollständig nach deinen persönlichen Wünschen anpassen.
   </p>
 
   <p>
