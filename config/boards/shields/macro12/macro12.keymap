@@ -3,80 +3,137 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 
+// --- Globales Setup für den Sticky-Layer (5 Sekunden Timeout für Admin-Layer) ---
+&sl {
+    release-after-ms = <5000>;
+};
+
 / {
+    macros {
+        // --- Makros für die Darts-Korrektur (1x Klicken) ---
+        // Sendet das Zeichen zur Dart-Auswahl und wechselt dauerhaft in Layer 2 (Numpad)
+        
+        mac_corr_1: mac_corr_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp KP_DIVIDE>, <&to 2>;
+        };
+
+        mac_corr_2: mac_corr_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp KP_MULTIPLY>, <&to 2>;
+        };
+
+        mac_corr_3: mac_corr_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp KP_MINUS>, <&to 2>;
+        };
+    };
+
     behaviors {
-        // --- Bluetooth Reset ---
-        td_bt_reset: tap_dance_bt_reset {
+        // --- Layer Switcher (System-Layer für 5s aktivieren per Doppelklick Combo) ---
+        td_layer_tog: tap_dance_layer_tog {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_BT_RESET";
+            label = "TD_LAYER_TOG";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&none>, <&bt BT_CLR>;
+            bindings = <&none>, <&sl 1>;  
         };
         
-        // --- Untere Reihe (Sonderzeichen / Zahlen) ---
-        td_n1: tap_dance_n1 {
+        // --- Mittlere Reihe Layer 0 (Zahlen Erweiterung) ---
+        td_n4_n5: tap_dance_n4_n5 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_N1";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>; 
-            bindings = <&kp KP_DIVIDE>, <&kp N1>; 
-        };
-
-        td_n2: tap_dance_n2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_N2";
+            label = "TD_N4_N5";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp KP_MULTIPLY>, <&kp N2>;
+            bindings = <&kp N4>, <&kp N5>;
         };
 
-        td_n3: tap_dance_n3 {
+        td_n6_n7: tap_dance_n6_n7 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_N3";
+            label = "TD_N6_N7";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp KP_MINUS>, <&kp N3>; 
+            bindings = <&kp N6>, <&kp N7>;
         };
 
-        // --- Mittlere Reihe (Zahlen Erweiterung) ---
-        td_n5_n6: tap_dance_n5_n6 {
+        // --- Untere Reihe Layer 0 (Korrektur ODER Kamera-Wechsel) ---
+        td_dart1: tap_dance_dart1 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_N5_N6";
+            label = "TD_DART1";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp N5>, <&kp N6>;
+            bindings = <&mac_corr_1>, <&kp N1>; // 1x = Korrektur-Makro, 2x = Kamera 1
         };
 
-        td_n7_n8: tap_dance_n7_n8 {
+        td_dart2: tap_dance_dart2 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_N7_N8";
+            label = "TD_DART2";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp N7>, <&kp N8>;
+            bindings = <&mac_corr_2>, <&kp N2>; // 1x = Korrektur-Makro, 2x = Kamera 2
+        };
+
+        td_dart3: tap_dance_dart3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_DART3";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mac_corr_3>, <&kp N3>; // 1x = Korrektur-Makro, 2x = Kamera 3
         };
     };
 
     combos {
         compatible = "zmk,combos";
         
-        // Bluetooth Reset Combo (Backspace + Enter)
-        combo_bt_clr {
+        // Combo: Backspace (6) + Enter (8) gleichzeitig 
+        // Löst den Tap-Dance aus (bei Doppelklick -> Admin Layer für 5s)
+        combo_sys_layer {
             timeout-ms = <100>;
             key-positions = <6 8>;
-            bindings = <&td_bt_reset>;
+            bindings = <&td_layer_tog>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
+        // -----------------------------------------------------------------
+        // LAYER 0: Dein Autodarts-Layout (Standard)
+        // -----------------------------------------------------------------
         default_layer {
             bindings = <
-                &kp S          &kp F5          &kp F11     
-                &td_n5_n6      &mkp LCLK       &td_n7_n8   
-                &kp BSPC       &kp A           &kp ENTER   
-                &td_n1         &td_n2          &td_n3      
+                &kp S          &kp F5          &kp F11     // Reihe 1: Shortcuts
+                &td_n4_n5      &mkp LCLK       &td_n6_n7   // Reihe 2: 4/5, Maus, 6/7
+                &kp BSPC       &kp A           &kp ENTER   // Reihe 3: Backspace, A, Enter
+                &td_dart1      &td_dart2       &td_dart3   // Reihe 4: 1x Tippen = Korrektur-Modus, 2x Tippen = Kamera 1-3
+            >;
+        };
+
+        // -----------------------------------------------------------------
+        // LAYER 1: System & Bluetooth (aktiviert durch Combo Doppelklick)
+        // Schließt sich nach 5 Sekunden oder nach einem Tastendruck automatisch!
+        // -----------------------------------------------------------------
+        system_layer {
+            bindings = <
+                &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2   // Reihe 1: Profile 1, 2, 3
+                &bt BT_CLR     &bt BT_CLR_ALL  &sys_reset     // Reihe 2: Profil löschen, Alle löschen, Neustart
+                &trans         &bootloader     &trans         // Reihe 3: (Combo bleibt transparent), Flash-Modus, (Combo)
+                &none          &none           &none          // Reihe 4: Ohne Funktion
+            >;
+        };
+
+        // -----------------------------------------------------------------
+        // LAYER 2: Reines Numpad für Korrektur (Handy-Layout)
+        // -----------------------------------------------------------------
+        numpad_layer {
+            bindings = <
+                &kp N1         &kp N2          &kp N3         // Reihe 1: 1, 2, 3 (Ganz oben)
+                &kp N4         &kp N5          &kp N6         // Reihe 2: 4, 5, 6
+                &kp N7         &kp N8          &kp N9         // Reihe 3: 7, 8, 9
+                &kp ENTER      &kp N0          &to 0          // Reihe 4: Enter, Null (0), Zurück zu Layer 0!
             >;
         };
     };
