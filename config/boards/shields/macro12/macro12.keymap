@@ -150,7 +150,7 @@
                 &ht_exit 0 N7    &ht_exit 0 N8     &ht_exit 0 N9    // Reihe 1: 1, 2, 3 (Ganz oben)
                 &ht_exit 0 N4    &ht_exit 0 N5     &ht_exit 0 N6    // Reihe 2: 4, 5, 6
                 &ht_exit 0 N1    &ht_exit 0 N2     &ht_exit 0 N3    // Reihe 3: 7, 8, 9
-                &ht_exit 0 N0    &ht_exit 0 KP_DOT &ht_exit 0 ENTER // Reihe 4: 0 (Miss), Punkt (25), Enter (Bull)
+                &ht_exit 0 N0    &ht_exit 0 KP_DOT &ht_exit 0 KP_ENTER // Reihe 4: 0 (Miss), Punkt (25), Enter (Bull)
             >;
         };
     };
