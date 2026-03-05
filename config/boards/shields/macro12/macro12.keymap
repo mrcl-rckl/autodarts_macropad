@@ -136,8 +136,8 @@
             bindings = <
                 &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2   // Reihe 1: Profile 1, 2, 3
                 &bt BT_CLR     &bt BT_CLR_ALL  &sys_reset     // Reihe 2: Profil löschen, Alle löschen, Neustart
-                &trans         &bootloader     &trans         // Reihe 3: (Combo bleibt transparent), Flash-Modus, (Combo)
-                &none          &none           &none          // Reihe 4: Ohne Funktion
+                &trans         &none           &trans         // Reihe 3: (Combo bleibt transparent), Flash-Modus, (Combo)
+                &to 0          &bootloader     &to 0          // Reihe 4: Ohne Funktion, Ohne Funktion, ZURÜCK ZU LAYER 0
             >;
         };
 
