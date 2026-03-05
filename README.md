@@ -133,7 +133,7 @@
 </div>
 
 <div align="center">
-  <img src="https://github.com/mrcl-rckl/autodarts_macropad/blob/main/readme-images/0_Quick_Correction.png?raw=true" alt="Quick Corretion" width="800">
+  <img src="https://github.com/mrcl-rckl/autodarts_macropad/blob/main/readme-images/0_Quick_Correction.png?raw=true" alt="Quick Correction" width="800">
 </div>
 
 <div align="center">
