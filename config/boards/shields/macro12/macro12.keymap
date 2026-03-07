@@ -10,11 +10,12 @@
 
 / {
     macros {
-        // --- Makro für das Numpad (Taste senden + Auto-Zurück zu Layer 0) ---
+        // --- Makro für das Numpad (Taste senden -> kurz warten -> Linksklick -> Auto-Zurück zu Layer 0) ---
         mac_num: mac_num {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>, <&to 0>;
+            wait-ms = <200>; // NEU: 200 Millisekunden Pause zwischen den Aktionen
+            bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>, <&mkp LCLK>, <&to 0>;
         };
 
         // --- Makros für die Darts-Korrektur (1x Klicken) ---
