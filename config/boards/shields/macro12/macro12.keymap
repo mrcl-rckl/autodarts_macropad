@@ -14,7 +14,6 @@
         mac_num: mac_num {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            // HIER KORRIGIERT: MACRO_PLACEHOLDER ist Zwingend notwendig für Parameter
             bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>, <&to 0>;
         };
 
@@ -59,7 +58,7 @@
         };
         
         // --- Mittlere Reihe Layer 0 (Zahlen Erweiterung) ---
-        td_n4_n5: tap_dance_n5_n6 {
+        td_n5_n6: tap_dance_n5_n6 {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_N5_N6";
             #binding-cells = <0>;
@@ -67,7 +66,7 @@
             bindings = <&kp N5>, <&kp N6>;
         };
 
-        td_n6_n7: tap_dance_n7_n8 {
+        td_n7_n8: tap_dance_n7_n8 {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_N7_N8";
             #binding-cells = <0>;
@@ -122,7 +121,7 @@
         default_layer {
             bindings = <
                 &kp S          &kp F5          &kp F11     // Reihe 1: Shortcuts
-                &td_n5_n6      &mkp LCLK       &td_n7_n8   // Reihe 2: 4/5, Maus, 6/7
+                &td_n5_n6      &mkp LCLK       &td_n7_n8   // Reihe 2: 5/6, Maus, 7/8
                 &kp BSPC       &kp A           &kp ENTER   // Reihe 3: Backspace, A, Enter
                 &td_dart1      &td_dart2       &td_dart3   // Reihe 4: 1x Tippen = Korrektur-Modus, 2x Tippen = Kamera 1-3
             >;
