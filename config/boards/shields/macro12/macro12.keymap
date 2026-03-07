@@ -57,21 +57,21 @@
             bindings = <&none>, <&sl 1>;  
         };
         
-        // --- Mittlere Reihe Layer 0 (Zahlen Erweiterung) ---
-        td_n5_n6: tap_dance_n5_n6 {
+        // --- Mittlere Reihe Layer 0 (Chat Makros H/J und K/L) ---
+        td_h_j: tap_dance_h_j {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_N5_N6";
+            label = "TD_H_J";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp N5>, <&kp N6>;
+            bindings = <&kp H>, <&kp J>;
         };
 
-        td_n7_n8: tap_dance_n7_n8 {
+        td_k_l: tap_dance_k_l {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_N7_N8";
+            label = "TD_K_L";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp N7>, <&kp N8>;
+            bindings = <&kp K>, <&kp L>;
         };
 
         // --- Untere Reihe Layer 0 (Korrektur ODER Kamera-Wechsel) ---
@@ -121,7 +121,7 @@
         default_layer {
             bindings = <
                 &kp S          &kp F5          &kp F11     // Reihe 1: Shortcuts
-                &td_n5_n6      &mkp LCLK       &td_n7_n8   // Reihe 2: 5/6, Maus, 7/8
+                &td_h_j        &mkp LCLK       &td_k_l     // Reihe 2: H/J, Maus, K/L
                 &kp BSPC       &kp A           &kp ENTER   // Reihe 3: Backspace, A, Enter
                 &td_dart1      &td_dart2       &td_dart3   // Reihe 4: 1x Tippen = Korrektur-Modus, 2x Tippen = Kamera 1-3
             >;
