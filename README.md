@@ -313,7 +313,7 @@
 </ul>
 
 <div align="center">
-  <img src="https://github.com/mrcl-rckl/autodarts_macropad/blob/main/readme-images/0_Tastenbelegung.png?raw=true" alt="Tastenbelegung" width="800">
+  <img src="https://github.com/mrcl-rckl/autodarts_macropad/blob/main/readme-images/0_Tastenzuweisung.png?raw=true" alt="Tastenbelegung" width="800">
 </div>
 
 <div align="center">
